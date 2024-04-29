@@ -19,14 +19,17 @@ public class Client {
     private Date rentDate;
     @DatabaseField(columnName = "payment")
     private double payment;
-
+    @DatabaseField(columnName = "contractDate", dataType = DataType.DATE)
+    private Date contractDate;
     public Client() {
     }
 
     public int getId() {
         return id;
     }
-
+    public void setId(int id){
+        this.id = id;
+    }
     public String getFullname() {
         return fullname;
     }
@@ -57,5 +60,13 @@ public class Client {
 
     public void setPayment(double payment) {
         this.payment = payment;
+    }
+
+    public Date getContractDate() {
+        return contractDate;
+    }
+
+    public void setContractDate(Date contractDate) {
+        this.contractDate = contractDate;
     }
 }

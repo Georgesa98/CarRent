@@ -7,6 +7,7 @@ import com.carstore.carrent.Model.Client.ClientDao;
 import com.carstore.carrent.Model.Database.DBConnection;
 import com.carstore.carrent.Model.User.User;
 import com.carstore.carrent.Model.User.UserDao;
+import com.carstore.carrent.Utils.ExpiryTaskSchedular;
 import com.j256.ormlite.stmt.Where;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -18,6 +19,7 @@ import java.sql.SQLException;
 import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.Locale;
+import java.util.Timer;
 
 public class HelloApplication extends Application {
     @Override
@@ -28,6 +30,9 @@ public class HelloApplication extends Application {
         stage.setTitle("Car Rent App");
         stage.setScene(scene);
         stage.show();
+        ExpiryTaskSchedular expiryTaskSchedular = new ExpiryTaskSchedular();
+        Timer timer = new Timer();
+        timer.schedule(expiryTaskSchedular, 1000);
     }
 
     public static void main(String[] args) {

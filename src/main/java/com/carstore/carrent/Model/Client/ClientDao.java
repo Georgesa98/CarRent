@@ -21,12 +21,15 @@ public class ClientDao extends BaseDaoImpl<Client, Long> implements IDataService
     }
     public List<Client> getActiveClients(){
         List<Client> activeClients = null;
+        Date date = new Date();
         try{
-            activeClients = super.queryForAll();
+            activeClients = super.queryBuilder().where()
+                    .gt("rentDate", date).query();
         }
         catch (Exception e){
             e.printStackTrace();
         }
         return activeClients;
+
     }
 }

@@ -33,6 +33,8 @@ public class ModifyCarController {
     private TextField yearOfManufacturerField;
     private ManageCarsController manageCarsController;
 
+
+
     public void setSelectedCar(Car selectedCar){
         this.currCar = selectedCar;
         colorField.setText(selectedCar.getColor());

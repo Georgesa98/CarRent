@@ -6,8 +6,8 @@ module com.carstore.carrent {
     requires bcrypt;
 
     opens com.carstore.carrent.Model.Car to ormlite.jdbc, javafx.base;
-    opens com.carstore.carrent.Model.User to ormlite.jdbc;
-    opens com.carstore.carrent.Model.Client to ormlite.jdbc;
+    opens com.carstore.carrent.Model.User to ormlite.jdbc, javafx.base;
+    opens com.carstore.carrent.Model.Client to ormlite.jdbc, javafx.base;
     exports com.carstore.carrent.Model.Car to ormlite.jdbc;
     exports com.carstore.carrent.Model.User to ormlite.jdbc;
     exports com.carstore.carrent.Model.Client to ormlite.jdbc;
